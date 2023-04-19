@@ -13,8 +13,57 @@ public class fp
 		FPNumber fa = new FPNumber(a);
 		FPNumber fb = new FPNumber(b);
 		FPNumber result = new FPNumber(0);
-
+		
 		// Put your code in here!
+
+		//Handle NaN exception
+		//Return NaN value if found
+		if (fa.isNaN())
+		{
+			return fa.asInt();
+		}
+		if (fb.isNaN())
+		{
+			return fb.asInt();
+		}
+
+		//Handle zero exceptions
+		//If one number is zero, return the other input
+		if (fa.isZero())
+		{
+			return fb.asInt();
+		}
+		if (fb.isZero())
+		{
+			return fa.asInt();
+		}
+
+		//Check infinity exceptions
+		if (fa.isInfinity() && fb.isInfinity())
+		{
+			//Check if signs are same
+			if (fa.s() == fb.s())
+			{
+				return fa.asInt();
+			}
+			else
+			//Return NaN if signs aren't the same
+			{
+				fa.setF(1);
+				return fa.asInt();
+			}
+		}
+		//If either input is infinity, return infinity
+		if (fa.isInfinity() && !fb.isInfinity())
+		{
+			return fa.asInt();
+		}
+		if (fb.isInfinity() && !fa.isInfinity())
+		{
+			return fb.asInt();
+		}
+
+
 
 		return result.asInt();
 	}
