@@ -298,5 +298,10 @@ public class fp
 		System.out.println(Float.intBitsToFloat(m.mul(v24_25, v_1875)) + " should be -4.546875");
 		System.out.println(Float.intBitsToFloat(m.mul(v24_25, v5)) + " should be -121.25");
 		System.out.println(Float.intBitsToFloat(m.mul(v_1875, v5)) + " should be 0.9375");
+		System.out.println(Float.intBitsToFloat(m.mul(v24_25, vNaN)) + " should be NaN");
+		System.out.println(Float.intBitsToFloat(m.mul(v0, vInf)) + " should be NaN");
+		System.out.println(Float.intBitsToFloat(m.mul(v0, vInf)) + " should be NaN");
+		System.out.println(Float.intBitsToFloat(m.mul(v0, v24_25)) + " should be 0.0");
+		System.out.println(Float.intBitsToFloat(m.mul(vInf, v24_25)) + " should be Infinity");
 	}
 }
