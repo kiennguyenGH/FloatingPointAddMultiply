@@ -84,13 +84,6 @@ public class fp
 			sigB.setF(fa.f());
 		}
 
-		System.out.println(Float.intBitsToFloat(sigA.asInt()));
-		System.out.println(Float.intBitsToFloat(sigB.asInt()));
-
-		// System.out.println("s " + fa.s());
-		// System.out.println("e " + fa.e());
-		// System.out.println("f " + fa.f());
-
 		//Align exponents
 		while (sigB.e() != sigA.e())
 		{
